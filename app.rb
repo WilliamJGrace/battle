@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative 'HealthPoints'
 
 class Battle  < Sinatra::Base
   enable :sessions
@@ -12,10 +13,17 @@ class Battle  < Sinatra::Base
     session[:player2] = params[:player2]
     redirect '/play'
   end
+  post '/attack' do
+    @player2hp.deduct(10)
+    redirect '/play'
+  end
 
   get '/play' do
     @player1 = session[:player1]
     @player2 = session[:player2]
+    # @player1hp = HealthPoints.new
+    # @player2hp = HealthPoints.new
+    @player2hp = 100
     erb :play
   end
 

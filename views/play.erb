@@ -1,5 +1,7 @@
 
-<div >
+<div style='background-color:coral'>
   <%= @player1 %> vs. <%= @player2 %>
 </div>
-<p><%=@player2%>'s HP:100</p>
+<button type="submit" name="attack_player2" onclick="<%=@player2hp -= 10%>">Attack <%= @player2 %></button>
+
+<p><%=@player2%>'s HP:<%= @player2hp%> </p>
