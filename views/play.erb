@@ -1,8 +1,9 @@
 <a href="/attack">Attack</a>
 
 <div style='background-color:coral'>
-  <%= @player1.name %> vs. <%= @player2.name %>
+  <%= @game.player1.name %> vs. <%= @game.player2.name %>
 </div>
 <!-- <button type="submit" name="attack_player2" onclick="href='/attack'">Attack</button> -->
 
-<p><%=@player2.name%>'s HP:<%= @player2.current_hp%> </p>
+<p><%=@game.player2.name%>'s HP:<%=@game.player2.current_hp%> </p>
+<p><%=@game.player1.name%>'s HP:<%= @game.player1.current_hp%> </p>

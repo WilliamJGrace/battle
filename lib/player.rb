@@ -10,7 +10,5 @@ class Player
     @current_hp -= 10
   end
 
-  def attack(player)
-    player.deduct_hp
-  end
+  
 end
