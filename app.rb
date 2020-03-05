@@ -2,6 +2,7 @@ require 'sinatra/base'
 # require_relative 'HealthPoints'
 require './lib/player'
 require './lib/game'
+require './lib/attack'
 
 class Battle  < Sinatra::Base
   enable :sessions
@@ -19,7 +20,9 @@ class Battle  < Sinatra::Base
   get '/attack' do
     @game = $game
 
-    @game.attack(@game.player2)
+    @attack = Attack.new(@game.defending_player, @game.current_player)
+    @attack.attack
+    @game.switch_players
     # @game.current_player = @game.players[@game.current_turn]
     erb :attack
     # redirect '/play'

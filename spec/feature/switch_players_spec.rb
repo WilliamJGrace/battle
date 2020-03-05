@@ -7,9 +7,8 @@ feature 'Switch players' do
 
   end
   scenario 'player2 turn after player 1' do
-    sign_in_and_play
-    click_link('Attack')
-    click_link('Ok')
+    sign_in_and_play_and_attack_player2
+
     expect(page).to have_content("Timmy's turn")
 
 
