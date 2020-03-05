@@ -13,9 +13,11 @@ class Battle  < Sinatra::Base
     session[:player2] = params[:player2]
     redirect '/play'
   end
-  post '/attack' do
-    @player2hp.deduct(10)
-    redirect '/play'
+  get '/attack' do
+    @player1 = session[:player1]
+    @player2 = session[:player2]
+    erb :attack
+    # redirect '/play'
   end
 
   get '/play' do

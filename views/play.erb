@@ -1,7 +1,8 @@
+<a href="/attack">Attack</a>
 
 <div style='background-color:coral'>
   <%= @player1 %> vs. <%= @player2 %>
 </div>
-<button type="submit" name="attack_player2" onclick="<%=@player2hp -= 10%>">Attack <%= @player2 %></button>
+<!-- <button type="submit" name="attack_player2" onclick="href='/attack'">Attack</button> -->
 
 <p><%=@player2%>'s HP:<%= @player2hp%> </p>
