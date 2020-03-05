@@ -16,6 +16,15 @@ describe Game do
     expect(game.player2).to eq(player2)
   end
 
+  it "starts as player1" do
+    expect(game.current_player).to eq(player1)
+  end
+
+  it "switches players after turn" do
+    game.switch_players
+    expect(game.current_player).to eq(player2)
+  end
+
 
 
 
