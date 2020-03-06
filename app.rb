@@ -22,10 +22,18 @@ class Battle  < Sinatra::Base
 
     @attack = Attack.new(@game.defending_player, @game.current_player)
     @attack.attack
-    @game.switch_players
+
+    # if @game.defending_player.current_hp =< 0
     # @game.current_player = @game.players[@game.current_turn]
     erb :attack
     # redirect '/play'
+  end
+
+  post '/switch_players' do
+    @game = $game
+    @game.switch_players
+    redirect '/play'
+    
   end
 
   get '/play' do

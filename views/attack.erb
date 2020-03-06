@@ -1,3 +1,9 @@
 
-<p><%=@game.defending_player.name %> attacked <%= @game.current_player.name%> </p>
-<a href="/play">Ok</a>
+<p><%=@game.current_player.name %> attacked <%= @game.defending_player.name%> !!!!</p>
+
+
+<div id='okbutton'>
+  <form class="" action="/switch_players" method="post">
+    <button type="submit" name="attack_player2">Ok</button>
+  </form>
+</div>
