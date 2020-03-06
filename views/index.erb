@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-<link rel=”stylesheet” href=”style.css” />
-</head>
+
+<div class="main">
+
 
 <body>
-  <div style=text-align:center>
+  <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
+  <div class="main">
+
+  <div id='signinform'>
     <h1>Let's Battle!</h1>
     <form action="/named-players" method="post">
-      <label class='sansserif' for="player1">
+      <label id='player1text' class='sansserif' for="player1">
         Player 1 name:
         <input type="text" name="player1">
       </label>
-      <label for="player2">
+      <label id='player2text'for="player2">
         Player 2 name:
         <input type="text" name="player2">
       </label>

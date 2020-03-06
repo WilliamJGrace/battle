@@ -1,10 +1,50 @@
-<h2><%= @game.current_player.name %>'s turn'</h2>
-<a href="/attack">Attack</a>
+<style>
+  #playervsplayer {
+    font-size: 50px;
+    text-align: center
+  }
+  #player1hp {
+    font-size: 70px;
+    text-align: left
+  }
 
-<div style='background-color:coral'>
+  #player2hp {
+    font-size: 70px;
+    text-align: right
+  }
+  #player2sprite {
+    float: right
+  }
+  #player1sprite {
+    float: left
+  }
+  #attackbutton {
+    text-align: center;
+    
+  }
+</style>
+
+
+
+
+<h2><%= @game.current_player.name %>'s turn</h2>
+<!-- <a href="/attack">Attack</a> -->
+
+<div id='playervsplayer'style='background-color:red'>
   <%= @game.player1.name %> vs. <%= @game.player2.name %>
 </div>
-<!-- <button type="submit" name="attack_player2" onclick="href='/attack'">Attack</button> -->
+<div id='attackbutton'>
+  <form class="" action="/attack" method="get">
+    <button type="submit" name="attack_player2">Attack <%=@game.defending_player.name%>!</button>
+  </form>
+</div>
 
-<p><%=@game.player2.name%>'s HP:<%=@game.player2.current_hp%> </p>
-<p><%=@game.player1.name%>'s HP:<%= @game.player1.current_hp%> </p>
+<div>
+  <p id='player1hp'><%=@game.player2.name%>'s HP:<%=@game.player2.current_hp%> </p>
+  <img id='player1sprite' src="warriorsprite.png" height="700" width="600">
+</div>
+
+<div>
+  <p id='player2hp'><%=@game.player1.name%>'s HP:<%= @game.player1.current_hp%> </p>
+  <img id='player2sprite' src="fightsprite.png">
+</div>

@@ -1,0 +1,20 @@
+body {
+ background-image: url("background.jpg");
+
+}
+
+#player1text {
+  color: white
+}
+
+#player2text {
+  color: white
+}
+
+#signinform {
+  text-align: center;
+}
+h1 {
+font-family: sans-serif;
+color: white
+}
