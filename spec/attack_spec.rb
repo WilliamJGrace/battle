@@ -11,8 +11,4 @@ describe Attack do
     expect(player2).to receive(:deduct_hp)
     attack_ins.attack
   end
-
-
-
-
 end
